@@ -11,6 +11,12 @@ public class PayrollCalculator {
         System.out.print("What is your hourly pay rate?"); // read pay_rate
         float pay_rate = scanner.nextFloat();
         float gross_pay = pay_rate * hours;
+
+        // Overtime_rate = 1.5 * pay_rate; for hours > 40;
+
+        if (hours > 40) {
+            gross_pay = pay_rate * 40f + (hours - 40f)* 1.5f * pay_rate;}
+
         System.out.println("name = " + name + " and gross_pay = " + gross_pay);
     }
 }
